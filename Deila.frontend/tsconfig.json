@@ -1,20 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "noImplicitAny": false,
+    "target": "esnext",
     "module": "esnext",
     "strict": true,
+    "strictFunctionTypes": false,
     "jsx": "preserve",
+    "noEmit": true,
     "importHelpers": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "jest"
     ],
     "paths": {
       "@/*": [
@@ -36,6 +41,8 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules/**/*",
+    "typings/browser.d.ts",
+    "typings/browser"
   ]
 }
