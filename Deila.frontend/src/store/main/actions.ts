@@ -24,6 +24,10 @@ export const actions = {
     async actionCheckApiError(context: MainContext, payload: any) {
         try {
             if (payload.response!.status === 401) {
+                commitAddNotification(context, {
+                    color: "error",
+                    content: "401 Error.",
+                });
             }
         } catch (error) {
             commitAddNotification(context, {
