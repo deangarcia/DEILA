@@ -4,6 +4,7 @@ This is my project for Inclusive Coding!
 # Links
 DEI Dataset: https://huggingface.co/datasets/deancgarcia/Diversity <br />
 Colab NLP Code: https://colab.research.google.com/drive/1bcbZyo3TVRPt_N8XMAI1kDpPkvidnopS
+Github Codebase: https://github.com/deangarcia/DEILA
 
 # Abstract
 In 2017 Google published an article titled Attention is
