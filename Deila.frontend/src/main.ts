@@ -1,5 +1,21 @@
-import { createApp } from 'vue'
+import './component-hooks';
+import Vue from 'vue'
 import App from './App.vue'
-//Test
+import router from './router';
+import store from '@/store';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
+import './plugins/vee-validate';
+import '@mdi/font/css/materialdesignicons.css';
 
-createApp(App).mount('#app')
+const vuetify = new Vuetify()
+
+Vue.config.productionTip = false
+Vue.use(Vuetify)
+
+new Vue({
+    router,
+    store,
+    vuetify,
+    render: h => h(App),
+}).$mount('#app')
