@@ -45,13 +45,21 @@
         <v-navigation-drawer persistent :mini-variant="miniDrawer" v-model="showDrawer" fixed app>
             <v-layout column fill-height>
                 <v-list>
-                    <v-subheader>Main Menu</v-subheader>
+                    <v-subheader>Menu</v-subheader>
                     <v-list-item to="/main/dashboard">
                         <v-list-item-action>
                             <v-icon>mdi-web</v-icon>
                         </v-list-item-action>
                         <v-list-item-content>
                             <v-list-item-title>Dashboard</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item to="/main/basis">
+                        <v-list-item-action>
+                            <v-icon>mdi-file-upload</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Basis Definitions</v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
                 </v-list>

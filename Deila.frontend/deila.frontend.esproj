@@ -12,9 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\assets\" />
+    <Folder Include="src\interfaces\basis\" />
     <Folder Include="src\plugins\" />
+    <Folder Include="src\routers\basis\" />
     <Folder Include="src\store\main\" />
-    <Folder Include="src\views\main\" />
+    <Folder Include="src\views\main\basis\" />
   </ItemGroup>
   <!-- This target is copied from the ASP.NET SPA template in order to ensure node_modules are in place. -->
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

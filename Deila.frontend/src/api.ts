@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { apiUrl } from '@/env';
+import { IBasis, IBasisUpdate, IBasisCreate } from './interfaces/basis';
 
 function authHeaders(token: string) {
     return {
@@ -11,5 +12,9 @@ function authHeaders(token: string) {
 
 
 export const api = {
+
+    async getBasiss() {
+        return axios.get<IBasis[]>(`${apiUrl}/api/basiss/`);
+    },
 
 };
