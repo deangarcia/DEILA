@@ -12,7 +12,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("https://localhost:5002").WithMethods("PUT", "DELETE", "GET").AllowAnyHeader();
+                          builder.WithOrigins("https://localhost:5002", "https://deilafrontend.azurewebsites.net").WithMethods("PUT", "DELETE", "GET").AllowAnyHeader();
                       });
 });
 
@@ -46,11 +46,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseDeveloperExceptionPage();
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
 }
 else
 {
-    app.UseExceptionHandler();
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
 }
 
 
