@@ -17,20 +17,20 @@
                                    v-on="on"
                                    :to="{
                   name: 'basis-edit',
-                  params: { id: item.id },
+                  params: { Id: item.id },
                 }">
-                                <v-icon>edit</v-icon>
+                                <v-icon>mdi-pencil</v-icon>
                             </v-btn>
                             {{
-                  item.id
+                  item.Id
                             }}
                         </template>
                     </v-tooltip>
                     <v-tooltip top>
                         <span>Delete </span>
                         <template v-slot:activator="{ on }">
-                            <v-btn v-on="on" text @click="deleteBasis(item)">
-                                <v-icon>delete</v-icon>
+                            <v-btn v-on="on" text>
+                                <v-icon>mdi-delete</v-icon>
                             </v-btn>
                         </template>
                     </v-tooltip>
@@ -60,9 +60,9 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class Basiss extends Vue {
   public headers = [
-    { text: 'Category', sortable: true, value: 'Category' },
-    { text: 'Incidents', sortable: true, value: 'Incidents' },
-    { text: 'Actions', sortable: true, align: 'right', value: 'Id' },
+    { text: 'Category', sortable: true, value: 'category' },
+    { text: 'Incidents', sortable: true, value: 'incidents' },
+    { text: 'Actions', sortable: true, align: 'right', value: 'id' },
   ];
 
   public async mounted() {
@@ -74,11 +74,6 @@ export default class Basiss extends Vue {
     const ret = x;
     return ret;
 
-  }
-
-    public async deleteBasis(basis: IBasis) {
-        return basis;
-    //await dispatchDeleteBasis(this.$store, basis);
   }
 }
 </script>
