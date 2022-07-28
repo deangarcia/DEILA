@@ -10,7 +10,7 @@ namespace deila.backend.Contexts
 
         public DeilaDbContext(DbContextOptions<DeilaDbContext> options) : base(options)
         {
-            //Database.EnsureCreated(); 
+            Database.EnsureCreated(); 
         }
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

@@ -33,7 +33,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DeilaDbContext>(o =>
 {
-    o.UseSqlServer(builder.Configuration["connectionStrings:DeilaDBConnectionString"]);
+    o.UseSqlServer(builder.Configuration["connectionStrings:DeilaDbContext"]);
 });
 builder.Services.AddScoped<IArticleRepo, ArticleRepo>();
 builder.Services.AddScoped<IBasisRepo, BasisRepo>();
