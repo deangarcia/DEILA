@@ -6,6 +6,10 @@
     "mssql4": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:DeilaDB"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "connectionStrings:DeilaDbContext"
     }
   }
 }

@@ -26,7 +26,7 @@ module.exports = {
         },
         proxy: {
             '^/weatherforecast': {
-                target: 'https://localhost:5001/'
+                target: 'https://deila.azurewebsites.net/'
             }
         },
         port: 5002
