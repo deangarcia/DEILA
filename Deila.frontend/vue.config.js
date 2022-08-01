@@ -25,7 +25,7 @@ module.exports = {
             cert: fs.readFileSync(certFilePath),
         },
         proxy: {
-            '^/weatherforecast': {
+            '^/deila': {
                 // Production
                // target: 'https://deila.azurewebsites.net/'
                // Development
