@@ -48,6 +48,31 @@ export default new Router({
                                 },
                             ],
                         },
+                        {
+                            path: 'article',
+                            component: RouterComponent,
+                            redirect: 'article/article',
+                            children: [
+                              {
+                                path: 'article',
+                                name: 'article',
+                                component: () =>
+                                    import(/* webpackChunkName: "main-article" */ './views/main/article/Article.vue'),
+                              },
+                              {
+                                path: 'article/add',
+                                name: 'article-add',
+                                component: () =>
+                                    import('@/views/main/article/ArticleAdd.vue'),
+                              },
+                              {
+                                path: 'article/edit',
+                                name: 'article-edit',
+                                component: () =>
+                                    import('@/views/main/article/ArticleEdit.vue'),
+                              },
+                            ],
+                          },
                     ],
                 },
             ]

@@ -1,6 +1,4 @@
 import { api } from '@/api';
-import router from '@/router';
-import { AxiosError } from 'axios';
 import { getStoreAccessors } from 'typesafe-vuex';
 import { ActionContext } from 'vuex';
 import { State } from '../state';
