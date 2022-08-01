@@ -13,7 +13,7 @@
                         </v-list-item>
                         <v-list-item to="/main/basis">
                             <v-list-item-action>
-                                <v-icon>mdi-vpn-key</v-icon>
+                                <v-icon>mdi-key</v-icon>
                             </v-list-item-action>
                             <v-list-item-content>
                                 <v-list-item-title>Basis Definitions</v-list-item-title>
@@ -21,10 +21,10 @@
                         </v-list-item>
                         <v-list-item to="/main/article">
                             <v-list-item-action>
-                                <v-icon>mid-file-upload</v-icon>
+                                <v-icon>mdi-file-upload</v-icon>
                             </v-list-item-action>
                             <v-list-item-content>
-                                <v-list-item-title>Dataset Manager</v-list-item-title>
+                                <v-list-item-title>Article Dataset</v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-list>

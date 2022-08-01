@@ -34,18 +34,6 @@ export default new Router({
                                     component: () =>
                                         import(/* webpackChunkName: "main-article" */ './views/main/basis/Basis.vue'),
                                 },
-                                {
-                                    path: 'basis/add',
-                                    name: 'basis-add',
-                                    component: () =>
-                                        import('@/views/main/basis/BasisAdd.vue'),
-                                },
-                                {
-                                    path: 'basis/edit',
-                                    name: 'basis-edit',
-                                    component: () =>
-                                        import('@/views/main/basis/BasisEdit.vue'),
-                                },
                             ],
                         },
                         {

@@ -82,10 +82,6 @@ namespace deila.backend.Contexts
                 });
 
             base.OnModelCreating(modelBuilder);
-
-
-
-           
         }
     }
 }
