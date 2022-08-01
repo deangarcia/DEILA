@@ -9,7 +9,10 @@
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "connectionStrings:DeilaDbContext"
+      //Production
+      //"connectionId": "connectionStrings:DeilaDbContext"
+      //Development
+      "connectionId": "connectionStrings:DeilaDBConnectionString"
     }
   }
 }
