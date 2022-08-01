@@ -1,5 +1,8 @@
 ﻿using deila.backend.Entities;
+using ExcelDataReader;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
+using System.IO;
 
 namespace deila.backend.Contexts
 {
@@ -10,7 +13,8 @@ namespace deila.backend.Contexts
 
         public DeilaDbContext(DbContextOptions<DeilaDbContext> options) : base(options)
         {
-            Database.EnsureCreated(); 
+            // Production first time to populate need to add this
+            //Database.EnsureCreated(); 
         }
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
@@ -81,6 +85,41 @@ namespace deila.backend.Contexts
                     Incidents = 0
                 });
 
+            base.OnModelCreating(modelBuilder);
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            using (var stream = File.Open("Contexts/article_seeding_data.xlsx", FileMode.Open, FileAccess.Read))
+            {
+                IExcelDataReader reader;
+
+                reader = ExcelDataReader.ExcelReaderFactory.CreateReader(stream);
+
+                var conf = new ExcelDataSetConfiguration
+                {
+                    ConfigureDataTable = _ => new ExcelDataTableConfiguration
+                    {
+                        UseHeaderRow = true
+                    }
+                };
+
+                var dataSet = reader.AsDataSet(conf);
+
+                var dataTable = dataSet.Tables[0];
+
+                foreach (DataRow dr in dataTable.Rows)
+                    {
+                        modelBuilder.Entity<Article>()
+                        .HasData(
+                       new Article()
+                       {
+                           Id = int.Parse(dr["ID"].ToString()),
+                           Title = dr["Title"].ToString(),
+                           Content = dr["Content"].ToString(),
+                           BasisId = int.Parse(dr["Basis"].ToString()),
+                           Origin = dr["Origin"].ToString(),
+                           Sentiment = bool.Parse(dr["Sentiment"].ToString())
+                       });
+                    }
+            }
             base.OnModelCreating(modelBuilder);
         }
     }

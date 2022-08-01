@@ -41,7 +41,7 @@
                   name: 'article-edit',
                   params: { id: item.id },
                 }"
-                ><v-icon>edit</v-icon>
+                ><v-icon>mdi-pencil</v-icon>
               </v-btn>
               {{
                   item.id
@@ -52,7 +52,7 @@
             <span>Delete </span>
             <template v-slot:activator="{ on }">
               <v-btn v-on="on" text @click="deleteArticle(item)"
-                ><v-icon>delete</v-icon>
+                ><v-icon>mdi-delete</v-icon>
               </v-btn>
             </template>
           </v-tooltip>
@@ -60,7 +60,7 @@
         <template v-slot:expanded-item="{ headers, item }">
           <td style="padding: 25px" :colspan="headers.length">
             <tr>
-                <b> URL Source: </b>
+                <b> Origin: </b>
                 {{
                   item.origin
                 }}
@@ -104,13 +104,13 @@ import { readArticles } from '@/store/article/getters';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class Artciles extends Vue {
+export default class Articles extends Vue {
   public policyValue: string | null | undefined = 'Test';
   public expanded: string[] = [];
   public singleExpand: boolean = true;
   public headers = [
     { text: 'Title', sortable: true, value: 'title', align: 'left' },
-    { text: 'Category', sortable: true, value: 'basis' },
+    { text: 'Category', sortable: true, value: 'basisId' },
     { text: 'Positive', sortable: true, value: 'sentiment' },
     { text: 'Actions', sortable: true, align: 'right', value: 'id' },
   ];
@@ -128,6 +128,7 @@ export default class Artciles extends Vue {
 
    public async check(input_id: number, new_sentiment: boolean) 
    {
+       // Need to send rest of content 
       const updatedArticle: IArticleUpdate = {
         sentiment: !new_sentiment,
       };

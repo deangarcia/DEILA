@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using deila.backend.Contexts;
 
@@ -11,9 +12,10 @@ using deila.backend.Contexts;
 namespace deila.backend.Migrations
 {
     [DbContext(typeof(DeilaDbContext))]
-    partial class DeilaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220801232517_import-articles-xlsx")]
+    partial class importarticlesxlsx
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

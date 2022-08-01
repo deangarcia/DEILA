@@ -7,7 +7,7 @@
       <v-card-text>
         <template>
           <v-form v-model="valid">
-            <v-text-field label="URL" v-model="origin" required></v-text-field>
+            <v-text-field label="Origin" v-model="origin" required></v-text-field>
             <v-select
                   @change="selectBasis()"
                   id="basis_dd"
