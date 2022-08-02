@@ -18,7 +18,6 @@
               required
             ></v-textarea>
             <v-select
-                  @change="selectBasis()"
                   id="basis_dd"
                   v-model="basis"
                   :items="getBasis"
@@ -28,7 +27,6 @@
                   style="align: left; margin: 2px 2px; width: 500"
                 />
             <v-select
-                  @change="selectSentiment()"
                   id="sentiment_dd"
                   v-model="sentiment"
                   :items="getSentiment"
@@ -64,6 +62,7 @@ export default class EditArticle extends Vue {
   public basis = 4;
   public sentiment = false;
   public valid = false;
+  public origin = '';
 
   public basis_types = [
     { category: 'Gender', id: 1},
@@ -83,10 +82,10 @@ export default class EditArticle extends Vue {
     if (temp != null) {
       this.title = temp.title;
       this.content = temp.content;
-      this.basis = temp.basis;
+      this.basis = temp.basisId;
       this.sentiment = temp.sentiment;
+      this.origin = temp.origin
     }
-
   }
 
   public reset() {
@@ -94,6 +93,7 @@ export default class EditArticle extends Vue {
     this.content = '';
     this.basis = 4;
     this.sentiment = false;
+    this.origin = '';
   }
   public cancel() {
     this.$router.back();
@@ -103,7 +103,12 @@ export default class EditArticle extends Vue {
   }
   get getSentiment() {
     return this.sentiment_options;
-  }
+    }
+
+    public selectBasis()
+    {
+
+    }
   get article() {
     return readArticlesOne(this.$store)(+this.$router.currentRoute.params.id);
   }
@@ -111,8 +116,9 @@ export default class EditArticle extends Vue {
       const updatedArticle: IArticleUpdate = {
         title: this.title,
         content: this.content,
-        basis: this.basis,
+        basisId: this.basis,
         sentiment: this.sentiment,
+        origin: this.origin,
       };
       await dispatchUpdateArticle(this.$store, {
         id: this.article!.id,

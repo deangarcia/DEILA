@@ -26,7 +26,7 @@
             :checked="item.sentiment"
             type="checkbox"
             id="item.id"
-            @change="check(item.id, item.sentiment)"
+            @change="check(item.id, item.sentiment, item.basisId, item.content, item.title, item.origin)"
           />
         </template>
         <template v-slot:[`item.id`]="{ item }">
@@ -126,20 +126,27 @@ export default class Articles extends Vue {
 
   }
 
-   public async check(input_id: number, new_sentiment: boolean) 
+    public async check(input_id: number, new_sentiment: boolean, basis_Id: number, content: string, title: string, origin: string)
    {
        // Need to send rest of content 
       const updatedArticle: IArticleUpdate = {
-        sentiment: !new_sentiment,
+          sentiment: !new_sentiment,
+          basisId: basis_Id,
+          content: content,
+          title: title,
+          origin: origin
       };
       await dispatchUpdateArticle(this.$store, {
         id: input_id,
         article: updatedArticle,
       });
+      await dispatchGetArticles(this.$store);
   }
 
   public async deleteArticle(article: IArticle) {
-    await dispatchDeleteArticle(this.$store, article);
+      await dispatchDeleteArticle(this.$store, article);
+      //or in file components
+      await dispatchGetArticles(this.$store);
   }
 }
 </script>

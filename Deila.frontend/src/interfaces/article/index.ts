@@ -2,14 +2,14 @@ export interface IArticle {
     id: number;
     title: string;
     content: string;
-    basis: number;
+    basisId: number;
     origin: string;
     sentiment: boolean;
 }
 export interface IArticleCreate {
     title: string;
     content: string;
-    basis: number;
+    basisId: number;
     origin: string;
     sentiment: boolean;
 }
@@ -17,7 +17,7 @@ export interface IArticleCreate {
 export interface IArticleUpdate {
     title?: string;
     content?: string;
-    basis?: number;
+    basisId?: number;
     origin?: string;
     sentiment?: boolean;
 }

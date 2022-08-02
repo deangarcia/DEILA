@@ -51,7 +51,8 @@ export default class ArticleCreate extends Vue {
   public origin = '';
   public sentiment = false;
   public valid = false;
-  
+
+    // TODO remove URL and add in manual title and content inputing scrapping would be to hard to add for this project
   // Pull this from the basis 
   public basis_types = [
     { category: 'Gender', id: 1},
@@ -83,7 +84,7 @@ export default class ArticleCreate extends Vue {
       const newArticle: IArticleCreate = {
         title: '',
         content: '',
-        basis: this.basis,
+        basisId: this.basis,
         origin: this.origin,
         sentiment: this.sentiment,
       };
