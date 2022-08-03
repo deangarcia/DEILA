@@ -3,16 +3,13 @@
     "secrets1": {
       "type": "secrets"
     },
-    "mssql4": {
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:DeilaDB"
-    },
     "mssql1": {
       "type": "mssql",
-      //Production
-      //"connectionId": "connectionStrings:DeilaDbContext"
-      //Development
-      "connectionId": "connectionStrings:DeilaDBConnectionString"
+      "connectionId": "connectionStrings:DeilaDbContext"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "connectionStrings:DeilaDbContext"
     }
   }
 }

@@ -27,9 +27,9 @@ module.exports = {
         proxy: {
             '^/deila': {
                 // Production
-               // target: 'https://deila.azurewebsites.net/'
+               target: 'https://deila.azurewebsites.net/'
                // Development
-               target: 'https://localhost:5001/'
+               //target: 'https://localhost:5001/'
             }
         },
         port: 5002
