@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql4": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/deila/databases/deiladb",
+      "type": "mssql.azure",
+      "connectionId": "connectionStrings:DeilaDbContext"
+    }
+  }
+}

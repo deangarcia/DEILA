@@ -84,8 +84,9 @@ namespace deila.backend.Contexts
                     Category = "Other",
                     Incidents = 0
                 });
-
+            
             base.OnModelCreating(modelBuilder);
+            /*
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             using (var stream = File.Open("Contexts/article_seeding_data.xlsx", FileMode.Open, FileAccess.Read))
             {
@@ -121,6 +122,7 @@ namespace deila.backend.Contexts
                     }
             }
             base.OnModelCreating(modelBuilder);
+            */
         }
     }
 }
