@@ -6,29 +6,31 @@
       </v-card-title>
       <v-card-text>
         <template>
-          <v-form v-model="valid">
-            <v-text-field label="Origin" v-model="origin" required></v-text-field>
-            <v-select
-                  @change="selectBasis()"
-                  id="basis_dd"
-                  v-model="basis"
-                  :items="getBasis"
-                  :item-text="'category'"
-                  :item-value="'id'"
-                  label="Select Article Basis"
-                  style="align: left; margin: 2px 2px; width: 500"
-                />
-            <v-select
-                  @change="selectSentiment()"
-                  id="sentiment_dd"
-                  v-model="sentiment"
-                  :items="getSentiment"
-                  :item-text="'text'"
-                  :item-value="'sentiment'"
-                  label="Select Sentiment"
-                  style="align: left; margin: 2px 2px; width: 500"
-                />
-          </v-form>
+            <v-form v-model="valid">
+                <v-text-field label="Title" v-model="title" required></v-text-field>
+                <v-textarea clearable
+                            v-model="content"
+                            clear-icon="mdi-close-circle"
+                            label="Content"
+                            value="Article main body content."></v-textarea>
+                <v-text-field label="Origin" v-model="origin" required></v-text-field>
+                <v-select @change="selectBasis()"
+                          id="basis_dd"
+                          v-model="basis"
+                          :items="getBasis"
+                          :item-text="'category'"
+                          :item-value="'id'"
+                          label="Select Article Basis"
+                          style="align: left; margin: 2px 2px; width: 500" />
+                <v-select @change="selectSentiment()"
+                          id="sentiment_dd"
+                          v-model="sentiment"
+                          :items="getSentiment"
+                          :item-text="'text'"
+                          :item-value="'sentiment'"
+                          label="Select Sentiment"
+                          style="align: left; margin: 2px 2px; width: 500" />
+            </v-form>
         </template>
       </v-card-text>
       <v-card-actions>
@@ -49,6 +51,8 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class ArticleCreate extends Vue {
   public basis = 4;
   public origin = '';
+  public title = '';
+  public content = '';
   public sentiment = false;
   public valid = false;
 
@@ -67,6 +71,8 @@ export default class ArticleCreate extends Vue {
   ];
   public reset() {
     this.basis = 4;
+    this.title = '';
+    this.content = '';
     this.origin = '';
     this.sentiment = false;
   }
@@ -82,8 +88,8 @@ export default class ArticleCreate extends Vue {
 
   public async submit() {
       const newArticle: IArticleCreate = {
-        title: '',
-        content: '',
+        title: this.title,
+        content: this.content,
         basisId: this.basis,
         origin: this.origin,
         sentiment: this.sentiment,
