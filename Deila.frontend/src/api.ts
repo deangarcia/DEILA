@@ -28,6 +28,6 @@ export const api = {
     },
     ////////////////////////////////// Sentiment Analysis //////////////////////////////////////////////
     async getSentiment(text: string) {
-        return axios.get<ISentimentAnalysis[]>(`${apiUrl}/api/sentiment/`);
+        return axios.get<ISentimentAnalysis[]>(`http://127.0.0.1:8000/`);
     },
 };
