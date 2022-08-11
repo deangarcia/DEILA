@@ -4,7 +4,7 @@ import { actions } from './actions';
 import { SentimentState } from './state';
 
 const defaultState: SentimentState = {
-    result: [],
+    result: {negative: 0, positive: 0},
 };
 
 export const sentimentModule = {

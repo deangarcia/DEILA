@@ -26,10 +26,15 @@
 
 
 <script lang="ts">
+import { ISentimentAnalysis } from "../../interfaces/sentiment";
 import { Component, Vue } from 'vue-property-decorator';
 import {
   dispatchGetSentiment,
 } from '@/store/sentiment/actions';
+
+import {
+  readSentiment,
+} from "@/store/sentiment/getters";
 // Add store items and folder and set up API to just send back two logits and send it some text 
     // use that to figure out how to format GUI
 
@@ -45,10 +50,15 @@ export default class SentimentAnalysis extends Vue {
     this.$router.back();
   }
 
+  get getSentiment() {
+    const sentiment: ISentimentAnalysis = readSentiment(this.$store);
+    return sentiment;
+  }
+
   public async submit() {
     await dispatchGetSentiment(this.$store, this.dei_text);
 
-      this.$router.push({ name: 'sentiment-report' });
+    this.$router.push({ name: 'sentiment-report', params: { neg: this.getSentiment.negative, pos: this.getSentiment.positive,},});
   }
 }
 </script>

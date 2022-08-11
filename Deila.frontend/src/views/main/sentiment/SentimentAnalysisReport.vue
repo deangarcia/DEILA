@@ -28,12 +28,20 @@
 import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class SentimentAnalysis extends Vue {
-    
-    public neg_size = 700; // largest 700
-    public pos_size = 700; // smallest should be 100
+
 
   public back() {
     this.$router.back();
+  }
+
+  get neg_size()
+  {
+    return this.$router.currentRoute.params.neg;
+  }
+
+   get pos_size()
+  {
+    return this.$router.currentRoute.params.pos;
   }
 }
 </script>

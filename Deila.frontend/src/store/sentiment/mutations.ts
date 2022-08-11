@@ -4,7 +4,7 @@ import { SentimentState } from "./state";
 import { ISentimentAnalysis } from "@/interfaces/sentiment";
 
 export const mutations = {
-    setSentiment(state: SentimentState, payload: ISentimentAnalysis[]) {
+    setSentiment(state: SentimentState, payload: ISentimentAnalysis) {
         state.result = payload;
     },
 };
