@@ -32,7 +32,7 @@ export default new Router({
                                     path: 'basis',
                                     name: 'basis',
                                     component: () =>
-                                        import(/* webpackChunkName: "main-article" */ './views/main/basis/Basis.vue'),
+                                        import(/* webpackChunkName: "main-basis" */ './views/main/basis/Basis.vue'),
                                 },
                             ],
                         },
@@ -58,6 +58,25 @@ export default new Router({
                                 name: 'article-edit',
                                 component: () =>
                                     import('@/views/main/article/ArticleEdit.vue'),
+                              },
+                            ],
+                        },
+                        {
+                            path: 'sentiment',
+                            component: RouterComponent,
+                            redirect: 'sentiment/sentiment',
+                            children: [
+                              {
+                                path: 'sentiment',
+                                name: 'sentiment',
+                                component: () =>
+                                    import(/* webpackChunkName: "main-sentiment" */ './views/main/sentiment/SentimentAnalysis.vue'),
+                              },
+                              {
+                                path: 'sentiment/report',
+                                name: 'sentiment-report',
+                                component: () =>
+                                    import('@/views/main/sentiment/SentimentAnalysisReport.vue'),
                               },
                             ],
                           },

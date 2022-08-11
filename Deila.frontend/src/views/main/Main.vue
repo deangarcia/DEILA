@@ -28,7 +28,14 @@
                             </v-list-item-content>
                         </v-list-item>
                     </v-list>
-                    <v-divider></v-divider>
+                    <v-list-item to="/main/sentiment">
+                            <v-list-item-action>
+                                <v-icon>mdi-cube</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Sentiment Analysis</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
                     <v-list>
                         <v-divider></v-divider>
                         <v-list-item @click="switchMiniDrawer">

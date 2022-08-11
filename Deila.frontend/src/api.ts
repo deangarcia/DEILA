@@ -2,6 +2,7 @@ import axios from 'axios';
 import { apiUrl } from '@/env';
 import { IBasis, IBasisUpdate, IBasisCreate } from './interfaces/basis';
 import { IArticle, IArticleCreate, IArticleUpdate } from './interfaces/article';
+import { ISentimentAnalysis } from './interfaces/sentiment';
 
 export const api = {
     ////////////////////////////////// Article //////////////////////////////////////////////
@@ -25,5 +26,8 @@ export const api = {
     async getBasiss() {
         return axios.get<IBasis[]>(`${apiUrl}/api/basiss/`);
     },
-
+    ////////////////////////////////// Sentiment Analysis //////////////////////////////////////////////
+    async getSentiment(text: string) {
+        return axios.get<ISentimentAnalysis[]>(`${apiUrl}/api/sentiment/`);
+    },
 };
