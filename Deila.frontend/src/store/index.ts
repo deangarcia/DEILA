@@ -5,6 +5,7 @@ import { mainModule } from './main';
 import { basisModule } from './basis';
 import { articleModule } from './article';
 import { State } from './state';
+import { sentimentModule } from './sentiment';
 
 Vue.use(Vuex);
 
@@ -13,6 +14,7 @@ const storeOptions: StoreOptions<State> = {
         main: mainModule,
         basis: basisModule,
         article: articleModule,
+        sentiment: sentimentModule,
     },
 };
 
