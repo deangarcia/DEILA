@@ -12,7 +12,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("https://localhost:5002", "https://deilafrontend.azurewebsites.net").WithMethods("PUT", "DELETE", "GET").AllowAnyHeader();
+                          builder.WithOrigins("https://localhost:5002", "https://deila-frontend.azurewebsites.net").WithMethods("PUT", "DELETE", "GET").AllowAnyHeader();
                       });
 });
 
