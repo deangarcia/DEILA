@@ -6,14 +6,12 @@
         ".Python{,/**}",
         "build{,/**}",
         "develop-eggs{,/**}",
-        "dist{,/**}",
         "downloads{,/**}",
         "eggs{,/**}",
         ".eggs{,/**}",
         "lib{,/**}",
         "lib64{,/**}",
         "parts{,/**}",
-        "sdist{,/**}",
         "var{,/**}",
         "wheels{,/**}",
         "share/python-wheels{,/**}",
@@ -21,15 +19,7 @@
         ".installed.cfg",
         "*.egg",
         "MANIFEST",
-        ".env{,/**}",
-        ".venv{,/**}",
-        "env{,/**}",
-        "venv{,/**}",
-        "ENV{,/**}",
-        "env.bak{,/**}",
-        "venv.bak{,/**}",
-        ".vscode{,/**}"
     ],
     "appService.defaultWebAppToDeploy": "",
-    "appService.deploySubpath": "Deila.sentiment.backend"
+    "appService.deploySubpath": ""
 }

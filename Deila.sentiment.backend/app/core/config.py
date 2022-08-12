@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     # LOCAL DEVELOPMENT
     #SERVER_HOST: AnyHttpUrl = "http://127.0.0.1:8000/"
     SERVER_HOST: AnyHttpUrl = "https://deilasentimentbackend.scm.azurewebsites.net/"
-    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = ["http://localhost", "https://localhost:5002", "https://localhost:5001", "https://deilafrontend.azurewebsites.net"]
+    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = ["http://localhost", "https://localhost:5002", "https://localhost:5001", "https://deila-frontend.azurewebsites.net", "https://testing-d.azurewebsites.net"]
     PROJECT_NAME: str = "DEILA"
 
     @validator("BACKEND_CORS_ORIGINS", pre=True)
