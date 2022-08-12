@@ -28,6 +28,8 @@ export const api = {
     },
     ////////////////////////////////// Sentiment Analysis //////////////////////////////////////////////
     async getSentiment(text: string) {
-        return axios.get<ISentimentAnalysis>(`http://127.0.0.1:8000/api/v1/sentiment_analysis/?text=${text}`);
+        return axios.get<ISentimentAnalysis>(`https://deilasentimentbackend.azurewebsites.net/api/v1/sentiment_analysis/?text=${text}`);
+        //Development
+        //return axios.get<ISentimentAnalysis>(`http://127.0.0.1:8000/api/v1/sentiment_analysis/?text=${text}`);
     },
 };
