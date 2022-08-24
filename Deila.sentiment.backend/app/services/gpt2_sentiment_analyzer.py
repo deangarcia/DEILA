@@ -111,6 +111,8 @@ def validation(dataloader, device_):
 
   return true_labels, predictions_labels, avg_epoch_loss
 
+
+## Only do the static app and as the next step want to integrate the local app. 
 def model_classify(zero, init_token):
     #let it train here show it in demo
     global tokenizer
