@@ -31,5 +31,5 @@
         ".vscode{,/**}"
     ],
     "appService.defaultWebAppToDeploy": "",
-    "appService.deploySubpath": "Deila.sentiment.backend"
+    "appService.deploySubpath": ""
 }
