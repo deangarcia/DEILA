@@ -61,6 +61,11 @@
             <v-main>
                 <router-view></router-view>
             </v-main>
+             <v-footer class="pa-3" fixed app>
+                https://github.com/deangarcia/DEILA
+                <v-spacer></v-spacer>
+                <span>&copy;{{appName}}</span>
+            </v-footer>
     </div>
 </template>
 
@@ -70,6 +75,7 @@
     import { appName } from '@/env';
     import { readDashboardMiniDrawer, readDashboardShowDrawer } from '@/store/main/getters';
     import { commitSetDashboardShowDrawer, commitSetDashboardMiniDrawer } from '@/store/main/mutations';
+    import Footer from '@/components/Footer.vue';
 
 const routeGuardMain = async (to, from, next) => {
   if (to.path === '/main') {
@@ -79,7 +85,11 @@ const routeGuardMain = async (to, from, next) => {
   }
 };
 
-@Component
+@Component({
+    components: {
+        Footer,
+    },
+})
 export default class Main extends Vue {
     public appName = appName;
 

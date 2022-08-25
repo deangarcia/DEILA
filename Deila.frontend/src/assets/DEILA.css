@@ -1,0 +1,21 @@
+.footer-style {
+    background-color: #000000; 
+}
+
+.header-style {
+    background-color: #000000;
+}
+
+.editor-box > * {
+    border-color: grey;
+    border-style: solid;
+    width: auto;
+    height: auto;
+}
+
+.is-active {
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+}
+
