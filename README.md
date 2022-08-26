@@ -46,5 +46,4 @@ the link to a web based article. And let users test the sentiment analysis model
 
 
 <h3>Setup:</h3>
-Used this link for initial setup instructions. get into the details of the frontend and backend set ups in relative read me
-https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0
+Each resource that is the frontend, dataset manager backend, and machine learning backend has its own readme describing setup details
