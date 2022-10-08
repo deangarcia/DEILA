@@ -11,3 +11,5 @@ this is different from running locally.
 
 After that you can access the api the same way you have locally. Make sure to set the server name in the config app to the domain of 
 of your web app
+
+dont have swagger but can test with this since it is only one endpoint http://127.0.0.1:8000/api/v1/sentiment_analysis/?text=positive
