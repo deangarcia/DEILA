@@ -4,8 +4,7 @@ pip install 'requests==2.23.0'
 pip install 'pydantic==1.4'
 pip install 'raven==6.10.0'
 pip install 'gunicorn==20.0.4'
-pip install 'datasets==2.4.0'
-pip install 'scikit-learn==1.1'
+pip install 'torchvision==0.13.1'
 
 apt-get install git
 
