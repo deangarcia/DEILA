@@ -27,7 +27,6 @@
                                 <v-list-item-title>Article Dataset</v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
-                    </v-list>
                     <v-list-item to="/main/sentiment">
                             <v-list-item-action>
                                 <v-icon>mdi-cube</v-icon>
@@ -36,6 +35,7 @@
                                 <v-list-item-title>Sentiment Analysis</v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
+                        </v-list>
                     <v-list>
                         <v-divider></v-divider>
                         <v-list-item @click="switchMiniDrawer">
@@ -61,7 +61,36 @@
             <v-main>
                 <router-view></router-view>
             </v-main>
+            <v-card height="400px">
+    <v-footer
+      fixed
+      padless
+    >
+      <v-card
+        flat
+        tile
+        width="100%"
+        class="primary text-center"
+      >
+        <v-card-text>
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4"
+            icon
+          >
+            <v-icon size="24px">
+              {{ icon }}
+            </v-icon>
+          </v-btn>
+        </v-card-text>
+      </v-card>
+    </v-footer>
+
+   
+  </v-card>
     </div>
+    
 </template>
 
 <script lang="ts">
@@ -82,6 +111,7 @@ const routeGuardMain = async (to, from, next) => {
 @Component
 export default class Main extends Vue {
     public appName = appName;
+    public icons = ['mdi-linkedin', 'mdi-gmail', 'mdi-file-word', 'mdi-github', 'mdi-file-word', 'mdi-github'];
 
 
     public beforeRouteEnter(to, from, next) {
