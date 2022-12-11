@@ -1,6 +1,6 @@
 <template>
     <v-container fluid>
-        <v-card>
+        <v-card class="pb-16 mb-16" >
             <v-card-title primary-title>
                 <div class="headline primary--text">Sentiment Analysis</div>
             </v-card-title>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-16 mb-16" >
     <v-toolbar light>
       <v-toolbar-title> Manage Articles </v-toolbar-title>
       <v-spacer></v-spacer>
